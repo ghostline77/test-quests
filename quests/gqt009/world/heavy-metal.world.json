@@ -1,0 +1,24 @@
+{
+  "_note": "Uses GQT006's Kabuki origin; all encounter objects and identities are owned by GQT009.",
+  "name": "gqt009",
+  "prefab_root": "$/mod/gqt009/#gqt009_pr_heavy_metal",
+  "block_path": "mod\\gqt009\\world\\gqt009_heavy_metal.streamingblock",
+  "quest_sector_path": "mod\\gqt009\\world\\gqt009_heavy_metal.streamingsector",
+  "always_loaded_sector_path": "mod\\gqt009\\world\\gqt009_always_loaded.streamingsector",
+  "streaming_box": "world",
+  "origin": {"x": -1026.8678, "y": 1279.5898, "z": 5.1301804, "yaw": 2.931411456},
+  "markers": [{"ref": "#gqt009_mp_heavy_metal", "sector": "always_loaded", "position": {"from": "origin"}, "yaw": "origin", "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}}],
+  "triggers": [
+    {"ref": "#gqt009_tr_outer", "position": {"from": "origin", "up": -6}, "outline": {"type": "circle", "radius": 45, "segments": 20, "height": 12}, "notifiers": ["quest"], "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}},
+    {"ref": "#gqt009_tr_reveal", "position": {"from": "origin", "up": -6}, "outline": {"type": "circle", "radius": 25, "segments": 16, "height": 12}, "notifiers": ["quest"], "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}},
+    {"ref": "#gqt009_tr_arena", "position": {"from": "origin", "up": -6}, "outline": {"type": "circle", "radius": 15, "segments": 16, "height": 12}, "notifiers": ["quest"], "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}},
+    {"ref": "#gqt009_tr_cleanup", "position": {"from": "origin", "up": -8}, "outline": {"type": "circle", "radius": 70, "segments": 24, "height": 16}, "notifiers": ["quest"], "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}}
+  ],
+  "community": {
+    "ref": "#gqt009_com_heavy_metal", "entry": "heavy_metal", "phase": "default", "period": "Day",
+    "character": "Character.GQT009HeavyMetal", "appearance": "default", "registry_debug_name": "gqt009_heavy_metal_registry",
+    "active_on_start": 0, "streaming_distance": 300,
+    "node_data": {"max_streaming_distance": 420, "streaming_distance": 360},
+    "spot": {"ref": "#gqt009_spot_heavy_metal", "position": {"from": "origin"}, "yaw": "origin", "workspot": "base\\workspots\\common\\ground\\generic__stand_ground__guard__01.workspot", "is_workspot_infinite": 0, "node_data": {"max_streaming_distance": 420, "streaming_distance": 360}}
+  }
+}

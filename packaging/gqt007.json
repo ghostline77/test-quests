@@ -1,0 +1,12 @@
+{
+  "name": "Ghostline_GQT007",
+  "builds": [
+    "../work/builds/gqt007_barry_lipsync"
+  ],
+  "active_roots": [
+    "mod\\gqt007\\phases\\gqt007.questphase"
+  ],
+  "include_loose": [
+    "r6/tweaks/test-quests/gqt007_barry_lipsync.yaml"
+  ]
+}

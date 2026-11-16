@@ -1,0 +1,10 @@
+{
+  "name": "Ghostline_GQT001",
+  "builds": [
+    "../work/builds/gqt001_signal_delay"
+  ],
+  "active_roots": [
+    "mod\\gqt001\\phases\\gqt001.questphase"
+  ],
+  "include_loose": []
+}

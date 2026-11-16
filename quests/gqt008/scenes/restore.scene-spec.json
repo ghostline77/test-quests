@@ -1,0 +1,100 @@
+{
+  "name": "gqt008_restore",
+  "manifest": "../dialogue/interaction.manifest.json",
+  "archive_path": "mod\\gqt008\\scenes\\gqt008_restore.scene",
+  "choice_locales": [
+    "db_db",
+    "pl_pl",
+    "en_us"
+  ],
+  "section_tail_padding_ms": 300,
+  "lipsync_animset": "mod\\gqt008\\localization\\en-us\\lipsync\\gqt008_interaction\\civ_low_m_11_enus_40_fat.anims",
+  "actors": [
+    {
+      "key": "barry",
+      "name": "barry",
+      "kind": "community",
+      "entry": "barry",
+      "community_ref": "#gqt008_com_barry",
+      "appearance": "default",
+      "lipsync": true,
+      "voicetag": "1624173162010260376"
+    },
+    {
+      "key": "v",
+      "name": "V",
+      "kind": "player",
+      "record": "Character.Player_Puppet_Base",
+      "appearance": "default",
+      "lipsync": true
+    }
+  ],
+  "spoken_line_order": [],
+  "choice_line_order": [],
+  "exit_points": [
+    {
+      "name": "end",
+      "node": "exit_end"
+    }
+  ],
+  "sections": [],
+  "choices": [],
+  "quest_nodes": [
+    {
+      "kind": "use_workspot",
+      "entity_ref": "#gqt008_com_barry",
+      "entry": "barry",
+      "workspot_ref": "current",
+      "function": "IdleOnlyMode",
+      "enable_idle_mode": false,
+      "teleport": true,
+      "instant": false,
+      "repeat_on_interrupt": false,
+      "is_workspot_infinite": true,
+      "on_success": [
+        {
+          "node": "exit_end"
+        }
+      ],
+      "key": "use_workspot"
+    }
+  ],
+  "xor_nodes": [],
+  "entry_points": [
+    {
+      "name": "start",
+      "node": "entry_start"
+    }
+  ],
+  "start_nodes": [
+    {
+      "on_start": [
+        {
+          "node": "return_to_seat"
+        }
+      ],
+      "key": "entry_start"
+    }
+  ],
+  "end_nodes": [
+    {
+      "key": "exit_end"
+    }
+  ],
+  "performance_blocks": [
+    {
+      "key": "return_to_seat",
+      "kind": "workspot_move",
+      "actor": "barry",
+      "workspot_ref": "#gqt008_spot_barry",
+      "entry_id": 2,
+      "is_workspot_infinite": true,
+      "on_work_started": [
+        {
+          "node": "use_workspot"
+        }
+      ],
+      "on_success": []
+    }
+  ]
+}

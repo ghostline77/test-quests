@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "quests": [
+    {
+      "id": "gqt001_signal_delay",
+      "manifest": "quests/gqt001/quest.json"
+    },
+    {
+      "id": "gqt002_quiet_install",
+      "manifest": "quests/gqt002/quest.json"
+    },
+    {
+      "id": "gqt003_extract_and_hold",
+      "manifest": "quests/gqt003/quest.json"
+    },
+    {
+      "id": "gqt004_vehicle_lab",
+      "manifest": "quests/gqt004/quest.json"
+    },
+    {
+      "id": "gqt006_goth_baddie_cyberpsycho",
+      "manifest": "quests/gqt006/quest.json"
+    },
+    {
+      "id": "gqt007_barry_lipsync",
+      "manifest": "quests/gqt007/quest.json"
+    },
+    {
+      "id": "gqt008_interaction",
+      "manifest": "quests/gqt008/quest.json"
+    },
+    {
+      "id": "gqt009_heavy_metal",
+      "manifest": "quests/gqt009/quest.json"
+    }
+  ]
+}

@@ -1,0 +1,1243 @@
+{
+  "name": "gqt006_goth_baddie",
+  "manifest": "../script/gqt006_10_manifest.json",
+  "lipsync_animset": "mod\\gqt006\\scenes\\lipsync\\en\\gqt006_goth_baddie\\civ_low_f_45_afam_30.anims",
+  "archive_path": "mod\\gqt006\\scenes\\gqt006_goth_baddie.scene",
+  "exported_datetime": "2026-08-12T00:00:00Z",
+  "choice_locales": [
+    "db_db",
+    "pl_pl",
+    "en_us"
+  ],
+  "section_tail_padding_ms": 400,
+  "line_gap_ms": 250,
+  "actors": [
+    {
+      "key": "goth",
+      "name": "Goth Baddie",
+      "kind": "community",
+      "entry": "goth_baddie",
+      "community_ref": "#gqt006_com_goth_baddie",
+      "appearance": "ghostline_goth_baddie_default",
+      "lipsync": true,
+      "rid_anim_sets": [
+        "body_set_1"
+      ],
+      "rid_facial_anim_sets": [
+        "facial_set_1"
+      ]
+    },
+    {
+      "key": "v",
+      "name": "V",
+      "kind": "player",
+      "record": "Character.Player_Puppet_Base",
+      "appearance": "default",
+      "lipsync": true,
+      "rid_anim_sets": [
+        "body_set_2"
+      ],
+      "rid_facial_anim_sets": []
+    }
+  ],
+  "spoken_line_order": [
+    "gqt006_10_goth_intro_01",
+    "gqt006_10_v_intro_01",
+    "gqt006_10_goth_bet_01",
+    "gqt006_10_goth_bet_02",
+    "gqt006_10_v_accept",
+    "gqt006_10_v_threaten",
+    "gqt006_10_v_leave",
+    "gqt006_20_goth_down_01",
+    "gqt006_20_v_floor_01",
+    "gqt006_20_goth_prize_01",
+    "gqt006_20_v_ask_01",
+    "gqt006_20_goth_want_01",
+    "gqt006_20_v_continue",
+    "gqt006_20_v_tease",
+    "gqt006_20_v_stop",
+    "gqt006_20_goth_after_01",
+    "gqt006_20_v_after_01",
+    "gqt006_30_goth_yield_01",
+    "gqt006_30_v_brief_01",
+    "gqt006_30_goth_disappointed_01",
+    "gqt006_30_v_continue",
+    "gqt006_30_v_challenge",
+    "gqt006_30_v_stop",
+    "gqt006_30_goth_stay_01",
+    "gqt006_30_v_after_01",
+    "gqt006_30_goth_after_01"
+  ],
+  "choice_line_order": [
+    "gqt006_10_accept_short",
+    "gqt006_10_threaten_short",
+    "gqt006_10_leave_short",
+    "gqt006_20_continue_short",
+    "gqt006_20_tease_short",
+    "gqt006_20_stop_short",
+    "gqt006_30_continue_short",
+    "gqt006_30_challenge_short",
+    "gqt006_30_stop_short"
+  ],
+  "entry_points": [
+    {
+      "name": "start",
+      "node": "entry_start"
+    },
+    {
+      "name": "v_wins",
+      "node": "entry_v_wins"
+    },
+    {
+      "name": "goth_wins_debug",
+      "node": "entry_goth_wins_debug"
+    },
+    {
+      "name": "goth_after",
+      "node": "entry_goth_after"
+    }
+  ],
+  "exit_points": [
+    {
+      "name": "start_combat",
+      "node": "exit_start_combat"
+    },
+    {
+      "name": "end",
+      "node": "exit_end"
+    },
+    {
+      "name": "v_wins_done",
+      "node": "exit_v_wins_done"
+    },
+    {
+      "name": "goth_wins_done",
+      "node": "exit_goth_wins_done"
+    },
+    {
+      "name": "goth_truce_done",
+      "node": "exit_goth_truce_done"
+    },
+    {
+      "name": "goth_intimacy_requested",
+      "node": "exit_goth_intimacy_requested"
+    }
+  ],
+  "start_nodes": [
+    {
+      "on_start": [
+        {
+          "node": "puppet_ai"
+        }
+      ],
+      "key": "entry_start"
+    },
+    {
+      "on_start": [
+        {
+          "node": "puppet_ai_2"
+        }
+      ],
+      "key": "entry_v_wins"
+    },
+    {
+      "on_start": [
+        {
+          "node": "puppet_ai_3"
+        }
+      ],
+      "key": "entry_goth_wins_debug"
+    },
+    {
+      "on_start": [
+        {
+          "node": "appearance_3"
+        }
+      ],
+      "key": "entry_goth_after"
+    }
+  ],
+  "sections": [
+    {
+      "key": "pre_fight",
+      "lines": [
+        "gqt006_10_goth_intro_01",
+        "gqt006_10_v_intro_01",
+        "gqt006_10_goth_bet_01",
+        "gqt006_10_goth_bet_02"
+      ],
+      "on_end": [
+        {
+          "node": "pre_choice"
+        }
+      ]
+    },
+    {
+      "key": "accept",
+      "lines": [
+        "gqt006_10_v_accept"
+      ],
+      "on_end": [
+        {
+          "node": "exit_start_combat"
+        }
+      ]
+    },
+    {
+      "key": "threaten",
+      "lines": [
+        "gqt006_10_v_threaten"
+      ],
+      "on_end": [
+        {
+          "node": "exit_start_combat"
+        }
+      ]
+    },
+    {
+      "key": "leave",
+      "lines": [
+        "gqt006_10_v_leave"
+      ],
+      "on_end": [
+        {
+          "node": "exit_end"
+        }
+      ]
+    },
+    {
+      "key": "v_wins",
+      "lines": [
+        "gqt006_20_goth_down_01",
+        "gqt006_20_v_floor_01",
+        "gqt006_20_goth_prize_01",
+        "gqt006_20_v_ask_01",
+        "gqt006_20_goth_want_01"
+      ],
+      "on_end": [
+        {
+          "node": "v_win_choice"
+        }
+      ]
+    },
+    {
+      "key": "v_continue",
+      "lines": [
+        "gqt006_20_v_continue"
+      ],
+      "on_end": [
+        {
+          "node": "appearance_4"
+        }
+      ]
+    },
+    {
+      "key": "v_tease",
+      "lines": [
+        "gqt006_20_v_tease"
+      ],
+      "on_end": [
+        {
+          "node": "appearance_4"
+        }
+      ]
+    },
+    {
+      "key": "v_stop",
+      "lines": [
+        "gqt006_20_v_stop"
+      ],
+      "on_end": [
+        {
+          "node": "appearance_5"
+        }
+      ]
+    },
+    {
+      "key": "v_intimacy",
+      "lines": [],
+      "rid_duration_ms": 5000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_1"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_2"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "fpp": true,
+          "fpp_gender_params": {
+            "gender_masks": [
+              2,
+              1
+            ],
+            "transition_blend_in_trajectory_space_angles": [
+              {
+                "pitch": -19.1825619,
+                "roll": 1.49255657,
+                "yaw": -8.83565426
+              }
+            ],
+            "transition_end_input_angles": [
+              {
+                "pitch": -38.6518097,
+                "roll": 4.41326952,
+                "yaw": -10.6926498
+              },
+              {
+                "pitch": -68.0276566,
+                "roll": -0.00000456369389,
+                "yaw": 35.9254951
+              }
+            ]
+          },
+          "animation": "animation_3"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 5000,
+        "animation": "camera_1"
+      },
+      "on_end": [
+        {
+          "node": "scene_tier_5"
+        }
+      ]
+    },
+    {
+      "key": "v_after",
+      "lines": [
+        "gqt006_20_goth_after_01",
+        "gqt006_20_v_after_01"
+      ],
+      "on_end": [
+        {
+          "node": "appearance_5"
+        }
+      ]
+    },
+    {
+      "key": "goth_knockdown_hold",
+      "lines": [],
+      "rid_duration_ms": 750,
+      "on_end": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "goth_yield",
+      "lines": [
+        "gqt006_30_goth_yield_01"
+      ],
+      "look_at_events": [
+        {
+          "actor": "goth",
+          "target": "v",
+          "target_slot": "camera"
+        }
+      ],
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_face_cam",
+        "duration_ms": 1770,
+        "blend_time_seconds": 0
+      },
+      "on_end": [
+        {
+          "node": "v_glances_down"
+        }
+      ]
+    },
+    {
+      "key": "v_glances_down",
+      "lines": [],
+      "rid_duration_ms": 600,
+      "look_at_events": [
+        {
+          "actor": "goth",
+          "target": "v",
+          "target_slot": "camera"
+        }
+      ],
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_genitals_cam",
+        "duration_ms": 600,
+        "blend_time_seconds": 0.15
+      },
+      "on_end": [
+        {
+          "node": "v_notices_anatomy"
+        }
+      ]
+    },
+    {
+      "key": "v_notices_anatomy",
+      "lines": [
+        "gqt006_30_v_brief_01"
+      ],
+      "look_at_events": [
+        {
+          "actor": "goth",
+          "target": "v",
+          "target_slot": "camera"
+        }
+      ],
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_genitals_cam",
+        "duration_ms": 3370,
+        "blend_time_seconds": 0.15
+      },
+      "on_end": [
+        {
+          "node": "player_look_at"
+        }
+      ]
+    },
+    {
+      "key": "goth_disappointed",
+      "lines": [
+        "gqt006_30_goth_disappointed_01"
+      ],
+      "look_at_events": [
+        {
+          "actor": "goth",
+          "target": "v",
+          "target_slot": "camera"
+        }
+      ],
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_face_cam",
+        "duration_ms": 1840,
+        "blend_time_seconds": 0.15
+      },
+      "on_end": [
+        {
+          "node": "goth_loss_choice"
+        }
+      ]
+    },
+    {
+      "key": "goth_continue",
+      "lines": [
+        "gqt006_30_v_continue",
+        "gqt006_30_goth_stay_01"
+      ],
+      "on_end": [
+        {
+          "node": "exit_goth_intimacy_requested"
+        }
+      ]
+    },
+    {
+      "key": "goth_challenge",
+      "lines": [
+        "gqt006_30_v_challenge",
+        "gqt006_30_goth_stay_01"
+      ],
+      "on_end": [
+        {
+          "node": "exit_goth_intimacy_requested"
+        }
+      ]
+    },
+    {
+      "key": "goth_stop",
+      "lines": [
+        "gqt006_30_v_stop"
+      ],
+      "on_end": [
+        {
+          "node": "stop_workspot"
+        }
+      ]
+    },
+    {
+      "key": "release_lose_face_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_face_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "release_lose_genitals_camera"
+        }
+      ]
+    },
+    {
+      "key": "release_lose_genitals_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_genitals_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "release_intimacy_camera"
+        }
+      ]
+    },
+    {
+      "key": "release_intimacy_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "teleport_player_2"
+        }
+      ]
+    },
+    {
+      "key": "stop_release_lose_face_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_face_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "stop_release_lose_genitals_camera"
+        }
+      ]
+    },
+    {
+      "key": "stop_release_lose_genitals_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_lose_genitals_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "stop_release_intimacy_camera"
+        }
+      ]
+    },
+    {
+      "key": "stop_release_intimacy_camera",
+      "lines": [],
+      "rid_duration_ms": 50,
+      "camera_event": {
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 50,
+        "blend_time_seconds": 0,
+        "blend_in": false
+      },
+      "on_end": [
+        {
+          "node": "player_look_at_2"
+        }
+      ]
+    },
+    {
+      "key": "goth_after",
+      "lines": [
+        "gqt006_30_v_after_01",
+        "gqt006_30_goth_after_01"
+      ],
+      "on_end": [
+        {
+          "node": "scene_tier_8"
+        }
+      ]
+    }
+  ],
+  "props": [
+    {
+      "name": "gqt006_intimacy_camera",
+      "node_ref": "#gqt006_sm_intimacy_cam",
+      "key": "gqt006_intimacy_camera"
+    },
+    {
+      "name": "gqt006_lose_face_camera",
+      "node_ref": "#gqt006_sm_lose_face_cam",
+      "key": "gqt006_lose_face_camera"
+    },
+    {
+      "name": "gqt006_lose_genitals_camera",
+      "node_ref": "#gqt006_sm_lose_genitals_cam",
+      "key": "gqt006_lose_genitals_camera"
+    }
+  ],
+  "choices": [
+    {
+      "key": "pre_choice",
+      "options": [
+        {
+          "choice_key": "gqt006_10_accept_short",
+          "caption": "Deal. No killing.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "accept"
+        },
+        {
+          "choice_key": "gqt006_10_threaten_short",
+          "caption": "I'm not here to play.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "threaten"
+        },
+        {
+          "choice_key": "gqt006_10_leave_short",
+          "caption": "Find someone else.",
+          "single_choice": false,
+          "choice_type": 0,
+          "target": "leave"
+        }
+      ],
+      "actor": "goth"
+    },
+    {
+      "key": "v_win_choice",
+      "options": [
+        {
+          "choice_key": "gqt006_20_continue_short",
+          "caption": "That's better.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "v_continue"
+        },
+        {
+          "choice_key": "gqt006_20_tease_short",
+          "caption": "Maybe I like hearing you ask.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "v_tease"
+        },
+        {
+          "choice_key": "gqt006_20_stop_short",
+          "caption": "Changed my mind. Get dressed.",
+          "single_choice": false,
+          "choice_type": 0,
+          "target": "v_stop"
+        }
+      ],
+      "actor": "goth"
+    },
+    {
+      "key": "goth_loss_choice",
+      "options": [
+        {
+          "choice_key": "gqt006_30_continue_short",
+          "caption": "No. Just recalculating.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "goth_continue"
+        },
+        {
+          "choice_key": "gqt006_30_challenge_short",
+          "caption": "You still have to make me submit.",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "goth_challenge"
+        },
+        {
+          "choice_key": "gqt006_30_stop_short",
+          "caption": "The fight's over. So is the deal.",
+          "single_choice": false,
+          "choice_type": 0,
+          "target": "goth_stop"
+        }
+      ],
+      "actor": "goth"
+    }
+  ],
+  "quest_nodes": [
+    {
+      "kind": "puppet_ai",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "ai_tier": "Cinematic",
+      "on_out": [
+        {
+          "node": "pre_fight"
+        }
+      ],
+      "key": "puppet_ai"
+    },
+    {
+      "kind": "puppet_ai",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "ai_tier": "Cinematic",
+      "on_out": [
+        {
+          "node": "scene_tier"
+        }
+      ],
+      "key": "puppet_ai_2"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "unequip_player"
+        }
+      ],
+      "key": "scene_tier"
+    },
+    {
+      "kind": "unequip_player",
+      "unequip_types": "AllWeapons",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "unequip_actor"
+        }
+      ],
+      "key": "unequip_player"
+    },
+    {
+      "kind": "unequip_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "by_item": true,
+      "item_id": "Items.Preset_Katana_E3",
+      "slot_id": "AttachmentSlots.WeaponRight",
+      "unequip_types": "AllItems",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "realtime_delay"
+        }
+      ],
+      "key": "unequip_actor"
+    },
+    {
+      "kind": "realtime_delay",
+      "milliseconds": 100,
+      "on_out": [
+        {
+          "node": "appearance"
+        }
+      ],
+      "key": "realtime_delay"
+    },
+    {
+      "kind": "puppet_ai",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "ai_tier": "Cinematic",
+      "on_out": [
+        {
+          "node": "scene_tier_2"
+        }
+      ],
+      "key": "puppet_ai_3"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "unequip_player_2"
+        }
+      ],
+      "key": "scene_tier_2"
+    },
+    {
+      "kind": "unequip_player",
+      "unequip_types": "AllWeapons",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "unequip_actor_2"
+        }
+      ],
+      "key": "unequip_player_2"
+    },
+    {
+      "kind": "unequip_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "by_item": true,
+      "item_id": "Items.Preset_Katana_E3",
+      "slot_id": "AttachmentSlots.WeaponRight",
+      "unequip_types": "AllItems",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "realtime_delay_2"
+        }
+      ],
+      "key": "unequip_actor_2"
+    },
+    {
+      "kind": "realtime_delay",
+      "milliseconds": 100,
+      "on_out": [
+        {
+          "node": "player_status_effect"
+        }
+      ],
+      "key": "realtime_delay_2"
+    },
+    {
+      "kind": "player_status_effect",
+      "status_effect": "BaseStatusEffect.Knockdown",
+      "on_out": [
+        {
+          "node": "goth_knockdown_hold"
+        }
+      ],
+      "key": "player_status_effect"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_postfight",
+      "on_out": [
+        {
+          "node": "v_wins"
+        }
+      ],
+      "key": "appearance"
+    },
+    {
+      "kind": "render_fade",
+      "fade_in": false,
+      "duration_seconds": 0.3,
+      "on_out": [
+        {
+          "node": "appearance_2"
+        }
+      ],
+      "key": "render_fade"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_postfight",
+      "on_out": [
+        {
+          "node": "puppet_ai_4"
+        }
+      ],
+      "key": "appearance_2"
+    },
+    {
+      "kind": "puppet_ai",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "ai_tier": "Cinematic",
+      "on_out": [
+        {
+          "node": "teleport_player"
+        }
+      ],
+      "key": "puppet_ai_4"
+    },
+    {
+      "kind": "teleport_player",
+      "destination_ref": "#gqt006_sm_lose_v",
+      "heal": true,
+      "on_out": [
+        {
+          "node": "teleport_actor"
+        }
+      ],
+      "key": "teleport_player"
+    },
+    {
+      "kind": "teleport_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "destination_ref": "#gqt006_sm_lose_goth",
+      "on_out": [
+        {
+          "node": "realtime_delay_3"
+        }
+      ],
+      "key": "teleport_actor"
+    },
+    {
+      "kind": "realtime_delay",
+      "milliseconds": 350,
+      "on_out": [
+        {
+          "node": "use_workspot"
+        }
+      ],
+      "key": "realtime_delay_3"
+    },
+    {
+      "kind": "use_workspot",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "workspot_ref": "#gqt006_ws_lose_goth_lean",
+      "teleport": true,
+      "is_workspot_infinite": true,
+      "repeat_on_interrupt": false,
+      "on_work_started": [
+        {
+          "node": "render_fade_2"
+        }
+      ],
+      "key": "use_workspot"
+    },
+    {
+      "kind": "stop_workspot",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "workspot_ref": "#gqt006_ws_lose_goth_lean",
+      "finish_animation": true,
+      "on_success": [
+        {
+          "node": "appearance_6"
+        }
+      ],
+      "key": "stop_workspot"
+    },
+    {
+      "kind": "render_fade",
+      "fade_in": true,
+      "duration_seconds": 0.3,
+      "on_out": [
+        {
+          "node": "goth_yield"
+        }
+      ],
+      "key": "render_fade_2"
+    },
+    {
+      "kind": "player_look_at",
+      "target_ref": "#gqt006_com_goth_baddie",
+      "target_entry": "goth_baddie",
+      "slot": "Head",
+      "duration_seconds": 0.35,
+      "max_duration_seconds": 0.5,
+      "on_out": [
+        {
+          "node": "goth_disappointed"
+        }
+      ],
+      "key": "player_look_at"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_default",
+      "on_out": [
+        {
+          "node": "teleport_actor_2"
+        }
+      ],
+      "key": "appearance_3"
+    },
+    {
+      "kind": "teleport_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "destination_ref": "#gqt006_sm_aftermath_goth",
+      "on_out": [
+        {
+          "node": "use_workspot_2"
+        }
+      ],
+      "key": "teleport_actor_2"
+    },
+    {
+      "kind": "use_workspot",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "workspot_ref": "#gqt006_ws_aftermath_goth_stand",
+      "teleport": true,
+      "is_workspot_infinite": true,
+      "repeat_on_interrupt": false,
+      "on_work_started": [
+        {
+          "node": "equip_player"
+        }
+      ],
+      "key": "use_workspot_2"
+    },
+    {
+      "kind": "equip_player",
+      "unequip_types": "AllClothing",
+      "instant": false,
+      "on_out": [
+        {
+          "node": "scene_tier_3"
+        }
+      ],
+      "key": "equip_player"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "unequip_player_3"
+        }
+      ],
+      "key": "scene_tier_3"
+    },
+    {
+      "kind": "unequip_player",
+      "unequip_types": "AllWeapons",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "release_lose_face_camera"
+        }
+      ],
+      "key": "unequip_player_3"
+    },
+    {
+      "kind": "teleport_player",
+      "destination_ref": "#gqt006_sm_aftermath_v",
+      "heal": true,
+      "on_out": [
+        {
+          "node": "render_fade_3"
+        }
+      ],
+      "key": "teleport_player_2"
+    },
+    {
+      "kind": "render_fade",
+      "fade_in": true,
+      "duration_seconds": 0.25,
+      "on_out": [
+        {
+          "node": "goth_after"
+        }
+      ],
+      "key": "render_fade_3"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_intimacy",
+      "on_out": [
+        {
+          "node": "unequip_actor_3"
+        }
+      ],
+      "key": "appearance_4"
+    },
+    {
+      "kind": "unequip_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "by_item": true,
+      "item_id": "Items.Preset_Katana_E3",
+      "slot_id": "AttachmentSlots.WeaponRight",
+      "unequip_types": "AllItems",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "scene_tier_4"
+        }
+      ],
+      "key": "unequip_actor_3"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier4_FPPCinematic",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "v_intimacy"
+        }
+      ],
+      "key": "scene_tier_4"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "v_after"
+        }
+      ],
+      "key": "scene_tier_5"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_default",
+      "on_out": [
+        {
+          "node": "scene_tier_6"
+        }
+      ],
+      "key": "appearance_5"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": false,
+      "on_out": [
+        {
+          "node": "exit_v_wins_done"
+        }
+      ],
+      "key": "scene_tier_6"
+    },
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_default",
+      "on_out": [
+        {
+          "node": "stop_release_lose_face_camera"
+        }
+      ],
+      "key": "appearance_6"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": false,
+      "on_out": [
+        {
+          "node": "exit_goth_truce_done"
+        }
+      ],
+      "key": "scene_tier_7"
+    },
+    {
+      "kind": "player_look_at",
+      "target_ref": "#gqt006_com_goth_baddie",
+      "target_entry": "goth_baddie",
+      "slot": "Head",
+      "duration_seconds": 0.35,
+      "max_duration_seconds": 0.5,
+      "on_out": [
+        {
+          "node": "scene_tier_7"
+        }
+      ],
+      "key": "player_look_at_2"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier1_FullGameplay",
+      "force_empty_hands": false,
+      "on_out": [
+        {
+          "node": "exit_goth_wins_done"
+        }
+      ],
+      "key": "scene_tier_8"
+    }
+  ],
+  "xor_nodes": [],
+  "end_nodes": [
+    {
+      "key": "exit_start_combat"
+    },
+    {
+      "key": "exit_end"
+    },
+    {
+      "key": "exit_v_wins_done"
+    },
+    {
+      "key": "exit_goth_wins_done"
+    },
+    {
+      "key": "exit_goth_truce_done"
+    },
+    {
+      "key": "exit_goth_intimacy_requested"
+    }
+  ],
+  "rid_resources": [
+    {
+      "path": "base\\animations\\quest\\lore\\generic_sex\\intercourse\\sex_06_5s_m.scenerid",
+      "key": "sex_06_5s_m"
+    }
+  ],
+  "rid_animations": [
+    {
+      "serial_number": 1,
+      "key": "animation_1",
+      "resource": "sex_06_5s_m"
+    },
+    {
+      "serial_number": 8,
+      "key": "animation_2",
+      "resource": "sex_06_5s_m"
+    },
+    {
+      "serial_number": 5,
+      "key": "animation_3",
+      "resource": "sex_06_5s_m"
+    }
+  ],
+  "rid_anim_sets": [
+    {
+      "animations": [
+        "animation_1"
+      ],
+      "key": "body_set_1"
+    },
+    {
+      "animations": [
+        "animation_3"
+      ],
+      "key": "body_set_2"
+    }
+  ],
+  "rid_facial_anim_sets": [
+    {
+      "animations": [
+        "animation_2"
+      ],
+      "key": "facial_set_1"
+    }
+  ],
+  "rid_camera_animations": [
+    {
+      "serial_number": 7,
+      "key": "camera_1",
+      "resource": "sex_06_5s_m"
+    }
+  ]
+}

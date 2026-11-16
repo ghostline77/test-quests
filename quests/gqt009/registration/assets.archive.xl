@@ -1,0 +1,6 @@
+factories:
+  - mod\gqt009\weapons\factory.csv
+localization:
+  onscreens:
+    en-us:
+      - mod\gqt009\localization\en-us\onscreens\characters.json

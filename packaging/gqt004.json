@@ -1,0 +1,14 @@
+{
+  "name": "Ghostline_GQT004",
+  "builds": [
+    "../work/builds/gqt004_vehicle_lab"
+  ],
+  "active_roots": [
+    "mod\\gqt004\\phases\\gqt004.questphase"
+  ],
+  "include_loose": [
+    "r6/tweaks/ghostline/character_patch.yaml",
+    "r6/tweaks/test-quests/gqt004_vehicles.yaml"
+  ],
+  "include_prefixes": ["mod/ghostline/characters/patch/"]
+}

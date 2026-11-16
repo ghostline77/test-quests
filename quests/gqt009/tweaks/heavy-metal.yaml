@@ -1,0 +1,64 @@
+# Keep native NPC mantis behaviour and equip/unequip conditions; replace only the
+# actor's appearance, boss tuning and weapon factory identity.
+Character.GQT009HeavyMetal:
+  $base: Character.arasaka_ninja_fmelee3_mantis_ma_elite
+  entityTemplatePath: mod\gqt009\characters\heavy_metal\heavy_metal.ent
+  displayName: gl_gqt009_subject_name
+  fullDisplayName: gl_gqt009_subject_name
+  actionMap: Corpo.Map
+  archetypeData: Character.arasaka_ninja_fmelee3_mantis_ma_elite_inline0
+  baseAttitudeGroup: neutral
+  rarity: NPCRarity.Boss
+  reactionPreset: ReactionPresets.Ganger_Aggressive
+  scannerModulePreset: ScanningNPCPresets.ScannerPreset_NPCFull
+  threatTrackingPreset: TargetTracking.DefaultPreset
+  uiNameplate: UINameplate.CombatSettings
+  disableDefeatedState: false
+  dropsWeaponOnDeath: false
+  skipDisplayArchetype: true
+  tags:
+    - Cyberpsycho
+  statModifierGroups:
+    - Character.NPC_Base_Primary_Stat_ModGroup
+    - Character.Cyberpsycho_ModGroup
+    - Character.Cyberpsycho_HitReaction_Resistance
+    - Character.GQT009HeavyMetal_Stats
+  primaryEquipment: Character.GQT009HeavyMetal_PrimaryEquipment
+
+Character.GQT009HeavyMetal_Stats:
+  $type: gamedataStatModifierGroup_Record
+  statModifiers:
+    - Character.GQT009HeavyMetal_Health
+
+Character.GQT009HeavyMetal_Health:
+  $type: gamedataConstantStatModifier_Record
+  statType: BaseStats.Health
+  modifierType: Multiplier
+  value: 1.5
+
+# These native bases were checked against installed TweakDB: inline2 is the
+# mantis equipment group and inline3 its NPC_Mantis_Blades equipment item.
+Character.GQT009HeavyMetal_PrimaryEquipment:
+  $base: Character.arasaka_ninja_fmelee3_mantis_ma_elite_inline2
+  equipmentItems:
+    - Character.GQT009HeavyMetal_MantisItem
+
+Character.GQT009HeavyMetal_MantisItem:
+  $base: Character.arasaka_ninja_fmelee3_mantis_ma_elite_inline3
+  item: Items.GQT009HeavyMantisBlades
+
+Items.GQT009HeavyMantisBlades:
+  $base: Items.NPC_Mantis_Blades
+  entityName: gqt009_heavy_mantis
+
+Items.GQT009ServiceLog:
+  $base: Items.sts_wbr_jpn_01_shard_002
+  itemSecondaryAction: Items.GQT009ServiceLog_Action
+  localizedName: gl_gqt009_log_title
+
+Items.GQT009ServiceLog_Action:
+  $base: Items.sts_wbr_jpn_01_shard_002_inline0
+  journalEntry: onscreens/emails/quests/minor_quest/gqt009/shards/service_log
+
+QuestRewards.gqt009_completion:
+  $base: QuestRewards.sts_wat_kab_05_completion

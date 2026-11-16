@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "id": "gqt008_interaction",
+  "title": "Interaction performance lab",
+  "phase_prefabs": ["#gqt008_pr_interaction"],
+  "description": "Isolated native performance test.",
+  "composition": {
+    "namespace": "gqt008",
+    "quest": {
+      "title": "Interaction performance lab",
+      "localization_key": "gl_gqt008_title"
+    },
+    "objectives": {
+      "interaction": {
+        "id": "gqt008_01_obj_interaction",
+        "phase_id": "gqt008_01",
+        "text": "Try the interaction performances, then finish the test.",
+        "localization_key": "gl_gqt008_objective",
+        "description_id": "gqt008_01_desc_interaction",
+        "description": "Compare seated reactions, walk to the waiting mark, leave and return. This is a diagnostic fixture; gesture previews are silent.",
+        "description_key": "gl_gqt008_description",
+        "counter": 0,
+        "mappins": {
+          "barry": {
+            "id": "gqt008_01_qmp_barry",
+            "ref": "@locations.sm_barry.ref",
+            "text": "Interaction lab",
+            "localization_key": "gl_gqt008_mappin",
+            "debug_caption": "gl_gqt008_mappin"
+          }
+        }
+      }
+    },
+    "points_of_interest": {
+      "barry": {
+        "id": "gqt008_01_poi_barry",
+        "ref": "@locations.sm_barry.ref"
+      }
+    },
+    "locations": {
+      "pr_interaction": "#gqt008_pr_interaction",
+      "com_barry": "#gqt008_com_barry",
+      "sm_barry": "#gqt008_sm_barry",
+      "tr_setup": "#gqt008_tr_setup"
+    },
+    "facts": {
+      "debug_step": "gqt008_debug_step",
+      "comparison_finished": "gqt008_comparison_finished"
+    }
+  },
+  "stages": [
+    {
+      "id": "interaction",
+      "type": "meet_contact",
+      "status": "ready",
+      "phase_resource": "mod\\gqt008\\phases\\gqt008_interaction.questphase",
+      "phase_prefabs": [
+        "#gqt008_pr_interaction"
+      ],
+      "contact": "barry",
+      "scene": "mod\\gqt008\\scenes\\gqt008_interaction.scene",
+      "community": "#gqt008_com_barry",
+      "objective": "@objectives.interaction.path",
+      "description_entry": "@objectives.interaction.description_entry",
+      "mappin": "@objectives.interaction.mappins.barry.path",
+      "setup_trigger": "#gqt008_tr_setup",
+      "scene_origin": "#gqt008_sm_barry",
+      "accepted_fact": "gqt008_completed",
+      "defer_policy": "rearm",
+      "rearm_trigger": "#gqt008_tr_engage",
+      "resume_entry": "resume",
+      "attitude_group": "friendly",
+      "protection_source": "gqt008_performance",
+      "activity": {
+        "restore_scene": {
+          "scene": "mod\\gqt008\\scenes\\gqt008_restore.scene",
+          "origin": "#gqt008_sm_barry",
+          "entry": "start",
+          "exit": "end"
+        },
+        "activation_trigger": "#gqt008_tr_cleanup",
+        "cleanup_trigger": "#gqt008_tr_cleanup",
+        "deferred_fact": "gqt008_deferred",
+        "restored_fact": "gqt008_activity_restored",
+        "completed_fact": "gqt008_completed",
+        "cleaned_fact": "gqt008_cleaned_up",
+        "quest_path": "@quest.path"
+      }
+    }
+  ],
+  "resources": {
+    "assets": {
+      "mod\\building_builder\\gqt008-lab\\building.streamingblock": {"path":"../../work/buildings/interaction-lab/source/archive/mod/building_builder/gqt008-lab/building.streamingblock"},
+      "mod\\building_builder\\gqt008-lab\\building.streamingsector": {"path":"../../work/buildings/interaction-lab/source/archive/mod/building_builder/gqt008-lab/building.streamingsector"},
+      "mod\\building_builder\\gqt008-lab\\navigation.streamingsector": {"path":"../../work/buildings/interaction-lab/source/archive/mod/building_builder/gqt008-lab/navigation.streamingsector"}
+    },
+    "loose": {
+      "gqt008-lab.archive.xl":{"path":"../../work/buildings/interaction-lab/source/resources/gqt008-lab.archive.xl"}
+    },
+    "root_resource": "mod\\gqt008\\phases\\gqt008.questphase",
+    "scenes": [
+      {
+        "spec": "scenes/interaction.scene-spec.json",
+        "dialogue": "dialogue/interaction.manifest.json"
+      },
+      {
+        "spec": "scenes/restore.scene-spec.json",
+        "dialogue": "dialogue/interaction.manifest.json"
+      }
+    ],
+    "worlds": [
+      "world/interaction.world.json"
+    ],
+    "localizations": [
+      {
+        "spec": {
+          "namespace": "gqt008",
+          "dialogue": "interaction"
+        },
+        "manifest": "dialogue/interaction.manifest.json"
+      }
+    ],
+    "media": [
+      "../../assets/media"
+    ],
+    "tweaks": {}
+  }
+}

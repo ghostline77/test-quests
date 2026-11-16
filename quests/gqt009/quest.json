@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "id": "gqt009_heavy_metal",
+  "title": "Cyberpsycho Sighting: Heavy Metal",
+  "description": "A standalone Kabuki Cyberpsycho encounter testing a big-body NPC with fitted mantis blades.",
+  "start_gate": "after_act_1",
+  "phase_prefabs": ["@locations.prefab.ref"],
+  "debug_fact": "@facts.debug_start",
+  "stages": [
+    {
+      "id": "briefing", "type": "phone_job_offer", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_briefing.questphase",
+      "contact": "regina_jones",
+      "message": "@contacts.regina.threads.offer.entries.brief.path",
+      "choice_group": "@contacts.regina.threads.offer.entries.response.path",
+      "accept_choice": "@contacts.regina.threads.offer.entries.response.entries.accept.path",
+      "start_fact": "@facts.offer_sent", "accepted_fact": "@facts.accepted", "delay_game_hours": 0
+    },
+    {
+      "id": "neutralize", "type": "cyberpsycho_encounter", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_neutralize.questphase",
+      "community": "@locations.community.ref", "boss_entry": "heavy_metal",
+      "boss_character": "Character.GQT009HeavyMetal",
+      "activation_trigger": "@locations.outer.ref", "activation_mode": "IsInside", "activate": true,
+      "reveal": {"trigger": "@locations.reveal.ref", "scan": true, "attacked_by_boss": true, "boss_hit_by_player": true, "boss_sees_player": true},
+      "arena_trigger": "@locations.arena.ref", "arena_mode": "IsInside",
+      "resolution": {"allow_nonlethal": true, "spared_fact": "@facts.spared", "killed_fact": "@facts.killed"},
+      "objective": "@objectives.neutralize.path", "description_entry": "@objectives.neutralize.description_entry",
+      "mappin": "@objectives.neutralize.mappins.subject.path", "completion_fact": "@facts.resolved",
+      "authoring": {"world_spec": "world/heavy-metal.world.json", "tweak_file": "tweaks/heavy-metal.yaml"},
+      "required_assets": ["mod\\gqt009\\characters\\heavy_metal\\heavy_metal.ent", "mod\\gqt009\\cyberware\\mantis.ent"]
+    },
+    {
+      "id": "recover_log", "type": "acquire_item", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_recover_log.questphase",
+      "item": "Items.GQT009ServiceLog", "source": "grant", "quantity": 1, "acquisition_fact": "@facts.log_acquired"
+    },
+    {
+      "id": "read_log", "type": "read_shard", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_read_log.questphase",
+      "journal_entry": "@readables.service_log.path", "file_entry_index": 1,
+      "item": "Items.GQT009ServiceLog", "acquisition_fact": "@facts.log_acquired", "activate_entry": true,
+      "presentation_delay_seconds": 1,
+      "objective": "@objectives.read_log.path", "description_entry": "@objectives.read_log.description_entry",
+      "completion_fact": "@facts.log_read"
+    },
+    {
+      "id": "leave_site", "type": "leave_area", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_leave_site.questphase",
+      "trigger": "@locations.cleanup.ref", "objective": "@objectives.leave_site.path",
+      "description_entry": "@objectives.leave_site.description_entry", "completion_fact": "@facts.left_site",
+      "cleanup_community": "@locations.community.ref"
+    },
+    {
+      "id": "report", "type": "phone_conversation", "status": "ready",
+      "phase_resource": "mod\\gqt009\\phases\\gqt009_report.questphase",
+      "contact": "regina_jones", "thread": "@contacts.regina.threads.report.path",
+      "messages": ["@contacts.regina.threads.report.entries.status.path"],
+      "opening_branches": [
+        {"condition": "@facts.killed", "messages": ["@contacts.regina.threads.report.entries.killed.path"]},
+        {"condition": "@facts.spared", "messages": ["@contacts.regina.threads.report.entries.spared.path"]}
+      ],
+      "choice_group": "@contacts.regina.threads.report.entries.response.path",
+      "choices": [
+        {"choice": "@contacts.regina.threads.report.entries.response.entries.send_log.path", "reply": "@contacts.regina.threads.report.entries.received.path"},
+        {"choice": "@contacts.regina.threads.report.entries.response.entries.ask_repairs.path", "reply": "@contacts.regina.threads.report.entries.trace.path"}
+      ],
+      "final_message": "@contacts.regina.threads.report.entries.complete.path",
+      "objective": "@objectives.report.path", "description_entry": "@objectives.report.description_entry",
+      "reward": "QuestRewards.gqt009_completion", "completion_fact": "@facts.completed", "complete_quest": "@quest.path"
+    }
+  ],
+  "composition": {
+    "namespace": "gqt009",
+    "quest": {"title": "Cyberpsycho Sighting: Heavy Metal", "localization_key": "gl_gqt009_title", "type": "CyberPsycho"},
+    "objectives": {
+      "neutralize": {
+        "id": "gqt009_01_obj_neutralize", "phase_id": "gqt009_01", "text": "Neutralize Darius Voss.", "localization_key": "gl_gqt009_neutralize",
+        "description_id": "gqt009_01_desc", "description": "Regina reports a heavily augmented man in Kabuki. His mantis blades have already injured several people. Bring him in alive if you can.", "description_key": "gl_gqt009_neutralize_description", "counter": 0,
+        "mappins": {"subject": {"id": "gqt009_subject_pin", "ref": "@locations.marker.ref", "text": "Heavy Metal", "localization_key": "gl_gqt009_subject_pin", "debug_caption": "gl_gqt009_subject_pin", "variant": "HuntForPsychoVariant"}}
+      },
+      "read_log": {
+        "id": "gqt009_02_obj_read_log", "phase_id": "gqt009_02", "text": "Read Voss's service log.", "localization_key": "gl_gqt009_read_log",
+        "description_id": "gqt009_02_desc", "description": "The recovered shard records repeated implant failures before the incident.", "description_key": "gl_gqt009_read_log_description", "counter": 0, "mappins": {}
+      },
+      "leave_site": {
+        "id": "gqt009_03_obj_leave", "phase_id": "gqt009_03", "text": "Leave the area.", "localization_key": "gl_gqt009_leave",
+        "description_id": "gqt009_03_desc", "description": "Clear the site so Regina's team can move in.", "description_key": "gl_gqt009_leave_description", "counter": 0, "mappins": {}
+      },
+      "report": {
+        "id": "gqt009_04_obj_report", "phase_id": "gqt009_04", "text": "Report to Regina.", "localization_key": "gl_gqt009_report",
+        "description_id": "gqt009_04_desc", "description": "Send Regina Voss's status and recovered service log.", "description_key": "gl_gqt009_report_description", "counter": 0, "mappins": {}
+      }
+    },
+    "points_of_interest": {"subject": {"id": "gqt009_subject_poi", "ref": "@locations.marker.ref", "variant": "HuntForPsychoVariant"}},
+    "contacts": {
+      "regina": {
+        "id": "regina_jones", "localization_key": "LocKey#10891",
+        "threads": {
+          "offer": {
+            "id": "gqt009_offer", "title": "Cyberpsycho Sighting: Heavy Metal", "title_key": "gl_gqt009_offer_title",
+            "entries": {
+              "brief": {"type": "message", "id": "00_brief", "text": "Got a cyberpsycho report from Kabuki. Darius Voss, former heavy-lift security. Big frame, military mantis blades. First responders pulled back after he cut through their cover. Sending coordinates. Try to keep him alive.", "localization_key": "gl_gqt009_brief", "important": true, "attachment": "@quest.path"},
+              "response": {"type": "choice_group", "id": "01_response", "entries": {"accept": {"id": "01a_accept", "text": "On my way.", "localization_key": "gl_gqt009_accept"}}}
+            }
+          },
+          "report": {
+            "id": "gqt009_report", "title": "Heavy Metal: follow-up", "title_key": "gl_gqt009_report_title",
+            "entries": {
+              "status": {"type": "message", "id": "00_status", "text": "The site's gone quiet. What's Voss's condition?", "localization_key": "gl_gqt009_status"},
+              "killed": {"type": "message", "id": "01a_killed", "text": "He's dead. Recovered his service log. Someone kept rejecting his implant repairs.", "localization_key": "gl_gqt009_killed", "sender": "Player"},
+              "spared": {"type": "message", "id": "01b_spared", "text": "Alive and contained. Recovered his service log. Someone kept rejecting his implant repairs.", "localization_key": "gl_gqt009_spared", "sender": "Player"},
+              "response": {"type": "choice_group", "id": "02_response", "entries": {
+                "send_log": {"id": "02a_send_log", "text": "Sending you the log.", "localization_key": "gl_gqt009_send_log"},
+                "ask_repairs": {"id": "02b_ask_repairs", "text": "Who signed off on those implants?", "localization_key": "gl_gqt009_ask_repairs"}
+              }},
+              "received": {"type": "message", "id": "03_received", "text": "Got it. The repair history gives my people somewhere to start. They'll secure the scene.", "localization_key": "gl_gqt009_received"},
+              "trace": {"type": "message", "id": "03b_trace", "text": "The log carries a shell-company stamp. Send it over. I'll follow the paperwork while my team secures the scene.", "localization_key": "gl_gqt009_trace"},
+              "complete": {"type": "message", "id": "04_complete", "text": "Your payment's on its way. Thanks, V.", "localization_key": "gl_gqt009_complete"}
+            }
+          }
+        }
+      }
+    },
+    "readables": {
+      "service_log": {"kind": "onscreen", "group": "shards", "id": "service_log", "title": "VOSS // SERVICE DENIED", "title_key": "gl_gqt009_log_title", "text": "SERVICE REQUEST 119: Forearm mounting plates separating under load. Pain inhibitors no longer suppressing feedback.\nRESPONSE: Replacement components outside approved body specification. Claim denied.\n\nSERVICE REQUEST 126: Blades deploying without command. Cannot work. Cannot sleep.\nRESPONSE: User modification detected. Warranty void.\n\nLOCAL NOTE: Told them the brackets didn't fit. Told them what the screaming felt like. They told me to clock in.", "text_key": "gl_gqt009_log_body"}
+    },
+    "locations": {"prefab": "#gqt009_pr_heavy_metal", "community": "#gqt009_com_heavy_metal", "marker": "#gqt009_mp_heavy_metal", "outer": "#gqt009_tr_outer", "reveal": "#gqt009_tr_reveal", "arena": "#gqt009_tr_arena", "cleanup": "#gqt009_tr_cleanup"},
+    "facts": {"debug_start": "gqt009_debug_start", "offer_sent": "gqt009_offer_sent", "accepted": "gqt009_accepted", "spared": "gqt009_spared", "killed": "gqt009_killed", "resolved": "gqt009_resolved", "log_acquired": "gqt009_log_acquired", "log_read": "gqt009_log_read", "left_site": "gqt009_left_site", "completed": "gqt009_completed"}
+  },
+  "resources": {
+    "root_resource": "mod\\gqt009\\phases\\gqt009.questphase",
+    "archives": ["../../work/characters/heavy_metal/heavy_metal.archive"],
+    "assets": {
+      "mod\\gqt009\\weapons\\factory.csv": {"path": "../../work/cyberware/heavy_metal/factory.csv"},
+      "mod\\gqt009\\cyberware\\mantis.ent": {"path": "../../work/cyberware/heavy_metal/native/mod/gqt009/cyberware/mantis.ent"},
+      "mod\\gqt009\\cyberware\\mantis.rig": {"path": "../../work/cyberware/heavy_metal/native/mod/gqt009/cyberware/mantis.rig"},
+      "mod\\gqt009\\cyberware\\mantis_0.mesh": {"path": "../../work/cyberware/heavy_metal/native/mod/gqt009/cyberware/mantis_0.mesh"}
+    },
+    "worlds": ["world/heavy-metal.world.json"],
+    "extra_resources": {
+      "mod\\gqt009\\localization\\en-us\\onscreens\\characters.json": {"Data":{"RootChunk":{"$type":"JsonResource","cookingPlatform":"PLATFORM_PC","root":{"HandleId":"0","Data":{"$type":"localizationPersistenceOnScreenEntries","entries":[{"$type":"localizationPersistenceOnScreenEntry","primaryKey":"0","secondaryKey":"gl_gqt009_subject_name","femaleVariant":"Darius \"Shears\" Voss","maleVariant":""}]}}}}}
+    },
+    "loose": {"gqt009-assets.archive.xl": {"path": "registration/assets.archive.xl"}},
+    "tweaks": {"r6/tweaks/test-quests/gqt009_heavy_metal.yaml": "tweaks/heavy-metal.yaml"}
+  }
+}

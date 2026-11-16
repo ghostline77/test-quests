@@ -1,0 +1,20 @@
+{
+  "voices": {},
+  "schema": "ghostline-voice-library-v1",
+  "embedding_variants": {
+    "goth-baddie / gqt006-goth-baddie-burned-netrunner": {
+      "file": "goth-baddie/embeddings/gqt006-goth-baddie-burned-netrunner.safetensors",
+      "dimensions": 2048,
+      "sha256": "22d23f5183ab4be870550e605cd4f1462d8c73f235de0d00bd8d80139101d4ff",
+      "source_sha256": "dcfa988057fabf2781c31544a230a43f0cb61c4d1f688e33845cd64a99aeb951",
+      "mode": "embedding_only"
+    },
+    "goth-baddie / gqt006-goth-baddie-controlled-predator": {
+      "file": "goth-baddie/embeddings/gqt006-goth-baddie-controlled-predator.safetensors",
+      "dimensions": 2048,
+      "sha256": "1231c0f9bc919140280f06fd5874fc875092203575d046ece5ed28a9fe831233",
+      "source_sha256": "97524a04049d4a86c1776f4cc6cc18b2482f7ff71ceb17d4866dbd61e5a87ec4",
+      "mode": "embedding_only"
+    }
+  }
+}

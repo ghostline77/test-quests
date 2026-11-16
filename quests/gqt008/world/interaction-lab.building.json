@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "gqt008-lab",
+  "name": "GQT008 interaction performance lab",
+  "revision": 0,
+  "kit": "industrial-3m",
+  "origin": [
+    140,
+    100,
+    700
+  ],
+  "yaw": 0,
+  "wall_appearance": "default",
+  "floor_appearance": "tiles_grey",
+  "rooms": [
+    {
+      "id": "approach",
+      "x": 0,
+      "y": 0,
+      "width": 4,
+      "depth": 2,
+      "level": 0
+    },
+    {
+      "id": "performance",
+      "x": 0,
+      "y": 2,
+      "width": 4,
+      "depth": 2,
+      "level": 0
+    }
+  ],
+  "openings": {
+    "0:x:1:2": "passage",
+    "0:x:2:2": "passage"
+  },
+  "objects": [
+    {
+      "id": "office-desk",
+      "asset": "f9f0850dd0a8667e46b3",
+      "appearance": "default",
+      "position": [
+        8,
+        8,
+        0
+      ],
+      "yaw": 0,
+      "anchor": "base_center",
+      "collision": false,
+      "source_content_sha256": "87df9366f8638b20ff2a9d639370b9d3cf19ed686e697bc5c50a0b154b3d1fc4",
+      "level": 0
+    },
+    {
+      "id": "office-chair",
+      "asset": "b65b13d08280634a8090",
+      "appearance": "default",
+      "position": [
+        8,
+        7.05,
+        0
+      ],
+      "yaw": 0,
+      "anchor": "base_center",
+      "collision": false,
+      "source_content_sha256": "3db719c5e0bf23f024719cc5b7774c6528f9b49310e2c2a6615ac081a0f68d17",
+      "level": 0
+    },
+    {
+      "id": "office-paperwork",
+      "asset": "8c19776074348cd39c07",
+      "appearance": "default",
+      "position": [
+        7.82,
+        7.86,
+        0.8
+      ],
+      "yaw": -8,
+      "anchor": "base_center",
+      "collision": false,
+      "source_content_sha256": "8d5da29616a021b3d02eb5d2d141645f1ec28041428aa44307d161730df701fe",
+      "level": 0
+    },
+    {
+      "id": "office-coffee-mug",
+      "asset": "cac5fb021e9c548d1ca8",
+      "appearance": "black",
+      "position": [
+        8.38,
+        7.82,
+        0.8
+      ],
+      "yaw": 25,
+      "anchor": "base_center",
+      "collision": false,
+      "source_content_sha256": "6f3dcc446303fceaaffd33fa7fa67a91688371d92c4a04ea0364d0acd9e6977c",
+      "level": 0
+    },
+    {
+      "id": "visitor-chair",
+      "asset": "b65b13d08280634a8090",
+      "appearance": "default",
+      "position": [
+        8,
+        9.2,
+        0
+      ],
+      "yaw": 180,
+      "anchor": "base_center",
+      "collision": false,
+      "source_content_sha256": "3db719c5e0bf23f024719cc5b7774c6528f9b49310e2c2a6615ac081a0f68d17",
+      "level": 0
+    }
+  ],
+  "stairs": [],
+  "navigation": {
+    "export": true,
+    "radius": 0.3,
+    "height": 1.8,
+    "layer": 241
+  }
+}

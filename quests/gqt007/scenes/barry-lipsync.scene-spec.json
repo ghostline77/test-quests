@@ -1,0 +1,119 @@
+{
+  "name": "gqt007_barry_lipsync",
+  "manifest": "../dialogue/gqt007_barry_lipsync.manifest.json",
+  "archive_path": "mod\\gqt007\\scenes\\gqt007_barry_lipsync.scene",
+  "choice_locales": [
+    "db_db",
+    "pl_pl",
+    "en_us"
+  ],
+  "section_tail_padding_ms": 300,
+  "lipsync_animset": "mod\\gqt007\\localization\\en-us\\lipsync\\gqt007_barry_lipsync\\civ_low_m_11_enus_40_fat.anims",
+  "actors": [
+    {
+      "key": "barry",
+      "name": "barry",
+      "kind": "community",
+      "entry": "barry",
+      "community_ref": "#gqt007_com_barry",
+      "appearance": "default",
+      "lipsync": true,
+      "voicetag": "1624173162010260376"
+    },
+    {
+      "key": "v",
+      "name": "V",
+      "kind": "player",
+      "record": "Character.Player_Puppet_Base",
+      "appearance": "default",
+      "lipsync": true
+    }
+  ],
+  "spoken_line_order": [
+    "barry_vanilla",
+    "barry_modified"
+  ],
+  "choice_line_order": [
+    "play_vanilla",
+    "play_modified"
+  ],
+  "entry_point": {
+    "name": "start",
+    "node": "entry_start"
+  },
+  "exit_points": [
+    {
+      "name": "end",
+      "node": "exit_end"
+    }
+  ],
+  "start_node": {
+    "on_start": [
+      {
+        "node": "comparison_choice"
+      }
+    ],
+    "key": "entry_start"
+  },
+  "sections": [
+    {
+      "key": "vanilla_playback",
+      "lines": [
+        "barry_vanilla"
+      ],
+      "on_end": [
+        {
+          "node": "comparison_choice"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "exit_end"
+        }
+      ]
+    },
+    {
+      "key": "modified_playback",
+      "lines": [
+        "barry_modified"
+      ],
+      "on_end": [
+        {
+          "node": "comparison_choice"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "exit_end"
+        }
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "key": "comparison_choice",
+      "options": [
+        {
+          "choice_key": "play_vanilla",
+          "caption": "Play vanilla lipsync",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "vanilla_playback"
+        },
+        {
+          "choice_key": "play_modified",
+          "caption": "Play modified lipsync",
+          "single_choice": false,
+          "choice_type": 1,
+          "target": "modified_playback"
+        }
+      ],
+      "actor": "barry"
+    }
+  ],
+  "quest_nodes": [],
+  "xor_nodes": [],
+  "end_node": {
+    "key": "exit_end"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "depot": "mod\\gqt006\\workspots\\gqt006_goth_baddie_down.workspot",
+  "rig": "base\\characters\\base_entities\\woman_base\\woman_base.rig",
+  "animsets": [
+    "mod\\gqt006\\workspots\\gqt006_goth_baddie_down.anims"
+  ],
+  "animation_setup_hash": 9580208767504495000,
+  "root": {
+    "kind": "sequence",
+    "entries": [
+      {
+        "kind": "sequence",
+        "idle": "stand__2h_on_knees__01",
+        "entries": [
+          {
+            "kind": "pause",
+            "seconds": 4,
+            "key": "rest"
+          },
+          {
+            "kind": "random",
+            "min_clips": 3,
+            "max_clips": 5,
+            "pause_seconds": 4,
+            "pause_deviation": 1,
+            "weights": [
+              0.5,
+              0.5
+            ],
+            "entries": [
+              {
+                "kind": "clip",
+                "animation": "stand__2h_on_knees__01__look_l__01",
+                "key": "look_left"
+              },
+              {
+                "kind": "clip",
+                "animation": "stand__2h_on_knees__01__look_r__01",
+                "key": "look_right"
+              }
+            ],
+            "key": "look_around"
+          }
+        ],
+        "key": "kneeling"
+      }
+    ],
+    "key": "root"
+  }
+}

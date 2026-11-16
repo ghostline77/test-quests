@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "id": "briefing_to_completion",
+      "steps": [
+        {"event":{"event_id":"offer_accepted","stage":"briefing","outcome":"success"},"expect":{"active_stage":"neutralize"}},
+        {"event":{"event_id":"boss_resolved","stage":"neutralize","outcome":"success"},"expect":{"active_stage":"recover_log"}},
+        {"event":{"event_id":"log_granted","stage":"recover_log","outcome":"success"},"expect":{"active_stage":"read_log"}},
+        {"event":{"event_id":"log_read","stage":"read_log","outcome":"success"},"expect":{"active_stage":"leave_site"}},
+        {"event":{"event_id":"site_left","stage":"leave_site","outcome":"success"},"expect":{"active_stage":"report"}},
+        {"event":{"event_id":"regina_reported","stage":"report","outcome":"success"},"expect":{"terminal_outcome":"success"}}
+      ],
+      "expect":{"terminal_outcome":"success"}
+    },
+    {
+      "id": "resume_after_reading_evidence",
+      "steps": [
+        {"event":{"event_id":"offer","stage":"briefing","outcome":"success"}},
+        {"event":{"event_id":"boss","stage":"neutralize","outcome":"success"}},
+        {"event":{"event_id":"grant","stage":"recover_log","outcome":"success"}},
+        {"event":{"event_id":"read","stage":"read_log","outcome":"success"}},
+        {"save":"evidence_read"},
+        {"event":{"event_id":"leave_before_reload","stage":"leave_site","outcome":"success"},"expect":{"active_stage":"report"}},
+        {"load":"evidence_read","expect":{"active_stage":"leave_site"}},
+        {"event":{"event_id":"leave_after_reload","stage":"leave_site","outcome":"success"}},
+        {"event":{"event_id":"report_after_reload","stage":"report","outcome":"success"}}
+      ],
+      "expect":{"terminal_outcome":"success"}
+    }
+  ]
+}

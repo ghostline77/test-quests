@@ -1,0 +1,168 @@
+{
+  "format": "ghostline-character",
+  "version": 1,
+  "id": "goth_baddie",
+  "name": "Goth Baddie",
+  "revision": 0,
+  "template": "female_average",
+  "namespace": "mod\\ghostline\\characters\\goth_baddie",
+  "catalogue": {
+    "format": "ghostline-items",
+    "version": 1,
+    "sources": {
+      "clothing_source_identity": "08846801c1d03e98a2df42cdd838d0959dcc5e77228e9306d7efb599c5bf6f17",
+      "game_version": "2.31",
+      "language": "en-us",
+      "props_names_file": "usedhashes.kark",
+      "props_prefixes": "[\"base\\\\environment\\\\\",\"ep1\\\\environment\\\\\",\"base\\\\items\\\\\",\"ep1\\\\items\\\\\",\"base\\\\gameplay\\\\devices\\\\\",\"ep1\\\\gameplay\\\\devices\\\\\",\"base\\\\meshes\\\\\",\"ep1\\\\meshes\\\\\",\"base\\\\props\\\\\",\"ep1\\\\props\\\\\",\"base\\\\prefabs\\\\\",\"ep1\\\\prefabs\\\\\"]",
+      "props_source_identity": "08846801c1d03e98a2df42cdd838d0959dcc5e77228e9306d7efb599c5bf6f17",
+      "tweak_names_file": "tweakdbstr.kark",
+      "tweakdb_file": "tweakdb_ep1.bin"
+    },
+    "identity": "9f5ad3e90fdbb33dd10a0102c870bb6a9c04c2ac91a746003afa3e7f031043e6"
+  },
+  "appearances": [
+    {
+      "id": "ghostline_goth_baddie_default",
+      "name": "default",
+      "choices": {
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/40": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/40/definitions/2"
+      },
+      "equipment": {
+        "Clo_InnerChest": "base\\characters\\garment\\player_equipment\\torso\\t1_097_pwa_tank__corset_doll_prostitute.ent#",
+        "Clo_OuterChest": "base\\characters\\garment\\player_equipment\\torso\\t2_127_pwa_jacket__evelyn.ent#",
+        "Clo_Legs": "base\\characters\\garment\\player_equipment\\legs\\l1_078_pwa_pants__militech.ent#",
+        "Clo_Feet": "base\\characters\\garment\\player_equipment\\feet\\s1_073_pwa_shoe__high_heels.ent#"
+      },
+      "shapes": {
+        "eyes": 8,
+        "nose": 5,
+        "mouth": 10,
+        "jaw": 3,
+        "ears": 2
+      },
+      "mesh_overrides": {
+        "base\\characters\\garment\\player_equipment\\torso\\t1_097_tank__corset_doll_prostitute\\t1_097_pwa_tank__corset_doll_prostitute.mesh": {
+          "appearance": "black_gold"
+        },
+        "base\\characters\\garment\\player_equipment\\torso\\t2_127_jacket__evelyn\\t2_127_pwa_jacket__evelyn.mesh": {
+          "appearance": "black_croc"
+        },
+        "base\\characters\\garment\\player_equipment\\legs\\l1_078_pants__militech_small_caps\\l1_078_pwa_pants__militech.mesh": {
+          "appearance": "maelstrom_leather"
+        },
+        "base\\characters\\garment\\player_equipment\\feet\\s1_073_shoe__high_heels\\s1_073_pwa_shoe__high_heels.mesh": {
+          "appearance": "silver_purple"
+        }
+      },
+      "native_parts": [
+        {
+          "id": "hair",
+          "mesh": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs.mesh",
+          "appearance": "black_carbon",
+          "rig": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs_dangle_skeleton.rig",
+          "graph": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa_long_bangs_dangle_animgraph.animgraph"
+        }
+      ]
+    },
+    {
+      "id": "ghostline_goth_baddie_postfight",
+      "name": "postfight",
+      "choices": {
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/41": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/41/definitions/2"
+      },
+      "equipment": {},
+      "shapes": {
+        "eyes": 8,
+        "nose": 5,
+        "mouth": 10,
+        "jaw": 3,
+        "ears": 2
+      },
+      "mesh_overrides": {
+        "9829791393392570237": {
+          "resource": "base\\characters\\common\\player_base_bodies\\player_female_average\\genitals\\i0_000_pwa_base__penis_big.mesh"
+        }
+      },
+      "native_parts": [
+        {
+          "id": "hair",
+          "mesh": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs.mesh",
+          "appearance": "black_carbon",
+          "rig": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs_dangle_skeleton.rig",
+          "graph": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa_long_bangs_dangle_animgraph.animgraph"
+        }
+      ]
+    },
+    {
+      "id": "ghostline_goth_baddie_intimacy",
+      "name": "intimacy",
+      "choices": {
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#armsCustomizationOptions/5/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/0/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/72/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/139/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/141/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/155/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/213/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#headCustomizationOptions/6/definitions/2",
+        "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/41": "base/gameplay/gui/fullscreen/main_menu/female_cco.inkcharcustomization#bodyCustomizationOptions/41/definitions/2"
+      },
+      "equipment": {},
+      "shapes": {
+        "eyes": 8,
+        "nose": 5,
+        "mouth": 10,
+        "jaw": 3,
+        "ears": 2
+      },
+      "mesh_overrides": {
+        "9829791393392570237": {
+          "resource": "base\\characters\\common\\player_base_bodies\\player_female_average\\genitals\\i0_000_pwa_base__penis_big.mesh"
+        }
+      },
+      "native_parts": [
+        {
+          "id": "hair",
+          "mesh": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs.mesh",
+          "appearance": "black_carbon",
+          "rig": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa__long_bangs_dangle_skeleton.rig",
+          "graph": "ep1\\characters\\common\\hair\\hh_225_wa__long_bangs\\hh_225_wa_long_bangs_dangle_animgraph.animgraph"
+        }
+      ]
+    }
+  ],
+  "active_appearance": "ghostline_goth_baddie_default",
+  "identity": {
+    "record": "Character.GhostlineGothBaddie",
+    "voice_tag": "gq_goth_baddie",
+    "affiliation": "Factions.Ghostline"
+  },
+  "loadout": ["item:95932206476"],
+  "ai": {
+    "profile": "cyberpsycho_netrunner",
+    "action_map": "MaxTacNetrunner.Map",
+    "archetype_data": "ArchetypeData.NetrunnerT3",
+    "attitude_group": "neutral",
+    "reaction_preset": "ReactionPresets.Ganger_Aggressive",
+    "rarity": "NPCRarity.Boss",
+    "power_level": 60,
+    "health_multiplier": 3
+  }
+}

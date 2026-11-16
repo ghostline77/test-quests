@@ -1,0 +1,11 @@
+{
+  "name": "Ghostline_GQT003",
+  "builds": [
+    "../work/builds/gqt003_extract_and_hold"
+  ],
+  "active_roots": [
+    "mod\\gqt003\\phases\\gqt003.questphase"
+  ],
+  "include_loose": ["r6/tweaks/ghostline/character_patch.yaml"],
+  "include_prefixes": ["mod/ghostline/characters/patch/"]
+}

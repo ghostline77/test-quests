@@ -1,0 +1,7 @@
+{
+  "name": "Ghostline_GQT009_HeavyMetal",
+  "builds": ["../work/builds/gqt009_heavy_metal"],
+  "active_roots": ["mod\\gqt009\\phases\\gqt009.questphase"],
+  "include_prefixes": ["mod/gqt009/"],
+  "include_loose": ["r6/tweaks/test-quests/gqt009_heavy_metal.yaml"]
+}

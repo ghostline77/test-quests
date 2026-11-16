@@ -1,0 +1,12 @@
+{
+  "name": "Ghostline_GQT002",
+  "builds": [
+    "../work/builds/gqt002_quiet_install"
+  ],
+  "active_roots": [
+    "mod\\gqt002\\phases\\gqt002.questphase"
+  ],
+  "include_loose": [
+    "r6/tweaks/test-quests/gqt002_quiet_install.yaml"
+  ]
+}

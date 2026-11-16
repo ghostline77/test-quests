@@ -1,0 +1,14 @@
+{
+  "name": "Ghostline_GQT006",
+  "builds": [
+    "../work/builds/gqt006_goth_baddie_cyberpsycho"
+  ],
+  "active_roots": [
+    "mod\\gqt006\\phases\\gqt006.questphase"
+  ],
+  "include_loose": [
+    "r6/tweaks/test-quests/character_goth_baddie.yaml",
+    "r6/tweaks/test-quests/gqt006_goth_baddie.yaml"
+  ],
+  "include_prefixes": ["mod/ghostline/characters/goth_baddie/"]
+}

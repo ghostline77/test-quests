@@ -1,0 +1,64 @@
+{
+  "format": "ghostline-character",
+  "version": 1,
+  "id": "heavy_metal",
+  "name": "Darius \"Shears\" Voss",
+  "revision": 0,
+  "template": "male_big",
+  "namespace": "mod\\gqt009\\characters\\heavy_metal",
+  "catalogue": {
+    "format": "ghostline-items",
+    "version": 1,
+    "sources": {
+      "clothing_source_identity": "08846801c1d03e98a2df42cdd838d0959dcc5e77228e9306d7efb599c5bf6f17",
+      "game_version": "2.31",
+      "language": "en-us",
+      "props_names_file": "usedhashes.kark",
+      "props_prefixes": "[\"base\\\\environment\\\\\",\"ep1\\\\environment\\\\\",\"base\\\\items\\\\\",\"ep1\\\\items\\\\\",\"base\\\\gameplay\\\\devices\\\\\",\"ep1\\\\gameplay\\\\devices\\\\\",\"base\\\\meshes\\\\\",\"ep1\\\\meshes\\\\\",\"base\\\\props\\\\\",\"ep1\\\\props\\\\\",\"base\\\\prefabs\\\\\",\"ep1\\\\prefabs\\\\\"]",
+      "props_source_identity": "08846801c1d03e98a2df42cdd838d0959dcc5e77228e9306d7efb599c5bf6f17",
+      "tweak_names_file": "tweakdbstr.kark",
+      "tweakdb_file": "tweakdb_ep1.bin"
+    },
+    "identity": "7498f448aa093400f82be220c10b8e30ef31d380b495d5c47f1d11252e76c28f"
+  },
+  "appearances": [
+    {
+      "id": "default",
+      "name": "Default",
+      "choices": {
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#armsCustomizationOptions/4": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#armsCustomizationOptions/4/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#bodyCustomizationOptions/0": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#bodyCustomizationOptions/0/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/144": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/144/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/146": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/146/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/160": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/160/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/291": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/291/definitions/0",
+        "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/6": "base/gameplay/gui/fullscreen/main_menu/male_cco.inkcharcustomization#headCustomizationOptions/6/definitions/0"
+      },
+      "equipment": {
+        "Clo_InnerChest": "base\\characters\\garment\\citizen_casual\\torso\\t1_059_mb_vest__taxi.ent#",
+        "Clo_Legs": "base\\characters\\garment\\corp_arasaka\\legs\\l1_057_mb_pants__samurai.ent#",
+        "Clo_Feet": "base\\characters\\garment\\citizen_casual\\feet\\s1_077_mb_boot__blackwater.ent#"
+      },
+      "shapes": {}
+    }
+  ],
+  "active_appearance": "default",
+  "identity": {
+    "record": "Character.GQT009HeavyMetal",
+    "display_name": "gl_gqt009_subject_name",
+    "voice_tag": "",
+    "affiliation": ""
+  },
+  "loadout": [],
+  "ai": {
+    "profile": "combat",
+    "action_map": "Corpo.Map",
+    "archetype_data": "Character.arasaka_ninja_fmelee3_mantis_ma_elite_inline0",
+    "attitude_group": "neutral",
+    "reaction_preset": "ReactionPresets.Ganger_Aggressive",
+    "rarity": "NPCRarity.Boss",
+    "power_level": null,
+    "health_multiplier": null
+  },
+  "refit_clothing": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Ghostline_GQT008",
+  "builds": [
+    "../work/builds/gqt008_interaction"
+  ],
+  "active_roots": [
+    "mod\\gqt008\\phases\\gqt008.questphase"
+  ],
+  "include_loose": []
+}

@@ -1,0 +1,762 @@
+{
+  "name": "gqt006_goth_baddie_intimacy",
+  "manifest": "../script/gqt006_10_manifest.json",
+  "archive_path": "mod\\gqt006\\scenes\\gqt006_goth_baddie_intimacy.scene",
+  "exported_datetime": "2026-08-12T00:00:00Z",
+  "choice_locales": [
+    "db_db",
+    "pl_pl",
+    "en_us"
+  ],
+  "section_tail_padding_ms": 0,
+  "line_gap_ms": 0,
+  "actors": [
+    {
+      "key": "goth",
+      "name": "Goth Baddie",
+      "kind": "community",
+      "entry": "goth_baddie",
+      "community_ref": "#gqt006_com_goth_baddie",
+      "appearance": "ghostline_goth_baddie_intimacy",
+      "lipsync": true,
+      "rid_anim_sets": [
+        "body_set_1"
+      ],
+      "rid_facial_anim_sets": []
+    },
+    {
+      "key": "v",
+      "name": "V",
+      "kind": "player",
+      "record": "Character.Player_Puppet_Base",
+      "appearance": "default",
+      "lipsync": true,
+      "rid_anim_sets": [
+        "body_set_2"
+      ],
+      "rid_facial_anim_sets": []
+    }
+  ],
+  "spoken_line_order": [],
+  "choice_line_order": [],
+  "entry_points": [
+    {
+      "name": "start",
+      "node": "entry_start"
+    }
+  ],
+  "exit_points": [
+    {
+      "name": "done",
+      "node": "exit_done"
+    }
+  ],
+  "start_nodes": [
+    {
+      "on_start": [
+        {
+          "node": "appearance"
+        }
+      ],
+      "key": "entry_start"
+    }
+  ],
+  "sections": [
+    {
+      "key": "female_sex_14",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_1"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_2"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "fpp_gender_params": {
+            "transition_blend_in_trajectory_space_angles": [
+              {
+                "pitch": 50.4963608,
+                "roll": 8.62380409,
+                "yaw": -176.292374
+              }
+            ],
+            "transition_end_input_angles": [
+              {
+                "pitch": 50.4963608,
+                "roll": 8.62380409,
+                "yaw": -176.292374
+              },
+              {
+                "pitch": 85.9406357,
+                "roll": 0.0000241216112,
+                "yaw": 125.740959
+              }
+            ]
+          },
+          "animation": "animation_3"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_1"
+      },
+      "on_end": [
+        {
+          "node": "female_sex_05"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "female_sex_05",
+      "lines": [],
+      "rid_duration_ms": 5000,
+      "rid_events": [
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "fpp": true,
+          "fpp_gender_params": {
+            "transition_blend_in_trajectory_space_angles": [
+              {
+                "pitch": 19.9029903,
+                "roll": 63.3925056,
+                "yaw": -89.2551193
+              }
+            ],
+            "transition_end_input_angles": [
+              {
+                "pitch": 50.0517883,
+                "roll": 111.73719,
+                "yaw": -117.334091
+              },
+              {
+                "pitch": 42.1894302,
+                "roll": 0.00000460920955,
+                "yaw": -110.593819
+              }
+            ]
+          },
+          "animation": "animation_4"
+        },
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_5"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_6"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 5000,
+        "animation": "camera_2"
+      },
+      "on_end": [
+        {
+          "node": "female_sex_11"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "female_sex_11",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_7"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_8"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "fpp_gender_params": {
+            "transition_blend_in_trajectory_space_angles": [
+              {
+                "pitch": 82.1717758,
+                "roll": 62.195507,
+                "yaw": 114.725563
+              }
+            ],
+            "transition_end_input_angles": [
+              {
+                "pitch": 82.1717758,
+                "roll": 62.195507,
+                "yaw": 114.725563
+              },
+              {
+                "pitch": 81.8940201,
+                "roll": 0,
+                "yaw": 109.762398
+              }
+            ]
+          },
+          "animation": "animation_9"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_3"
+      },
+      "on_end": [
+        {
+          "node": "female_sex_13"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "female_sex_13",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_11"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_12"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "fpp_gender_params": {
+            "transition_blend_in_trajectory_space_angles": [
+              {
+                "pitch": 77.0472717,
+                "roll": 17.4194565,
+                "yaw": -91.0938797
+              }
+            ],
+            "transition_end_input_angles": [
+              {
+                "pitch": 77.0472717,
+                "roll": 17.4194565,
+                "yaw": -91.0938797
+              },
+              {
+                "pitch": 0,
+                "roll": 0,
+                "yaw": -89.5742874
+              }
+            ]
+          },
+          "animation": "animation_13"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_4"
+      },
+      "on_end": [
+        {
+          "node": "render_fade"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "male_sex_14",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_1"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_2"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "animation": "animation_3"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_1"
+      },
+      "on_end": [
+        {
+          "node": "male_sex_05"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "male_sex_05",
+      "lines": [],
+      "rid_duration_ms": 5000,
+      "rid_events": [
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "fpp": true,
+          "animation": "animation_4"
+        },
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_5"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 5000,
+          "animation": "animation_6"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 5000,
+        "animation": "camera_2"
+      },
+      "on_end": [
+        {
+          "node": "male_sex_11"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "male_sex_11",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_7"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_8"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "animation": "animation_10"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_3"
+      },
+      "on_end": [
+        {
+          "node": "male_sex_13"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    },
+    {
+      "key": "male_sex_13",
+      "lines": [],
+      "rid_duration_ms": 2000,
+      "rid_events": [
+        {
+          "actor": "goth",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_11"
+        },
+        {
+          "actor": "goth",
+          "component": "head",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "animation": "animation_12"
+        },
+        {
+          "actor": "v",
+          "component": "body",
+          "origin": "#gqt006_sm_intimacy",
+          "duration_ms": 2000,
+          "fpp": true,
+          "animation": "animation_14"
+        }
+      ],
+      "rid_camera": {
+        "origin": "#gqt006_sm_intimacy",
+        "camera_ref": "#gqt006_sm_intimacy_cam",
+        "duration_ms": 2000,
+        "animation": "camera_4"
+      },
+      "on_end": [
+        {
+          "node": "render_fade"
+        }
+      ],
+      "on_cancel": [
+        {
+          "node": "render_fade"
+        }
+      ]
+    }
+  ],
+  "props": [
+    {
+      "name": "gqt006_intimacy_camera",
+      "node_ref": "#gqt006_sm_intimacy_cam",
+      "key": "gqt006_intimacy_camera"
+    }
+  ],
+  "choices": [],
+  "quest_nodes": [
+    {
+      "kind": "appearance",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "appearance": "ghostline_goth_baddie_intimacy",
+      "on_out": [
+        {
+          "node": "unequip_actor"
+        }
+      ],
+      "key": "appearance"
+    },
+    {
+      "kind": "unequip_actor",
+      "entity_ref": "#gqt006_com_goth_baddie",
+      "entry": "goth_baddie",
+      "by_item": true,
+      "item_id": "Items.Preset_Katana_E3",
+      "slot_id": "AttachmentSlots.WeaponRight",
+      "unequip_types": "AllItems",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "unequip_player"
+        }
+      ],
+      "key": "unequip_actor"
+    },
+    {
+      "kind": "unequip_player",
+      "unequip_types": "AllWeapons",
+      "instant": true,
+      "on_out": [
+        {
+          "node": "unequip_player_2"
+        }
+      ],
+      "key": "unequip_player"
+    },
+    {
+      "kind": "unequip_player",
+      "unequip_types": "AllClothing",
+      "instant": false,
+      "on_out": [
+        {
+          "node": "realtime_delay"
+        }
+      ],
+      "key": "unequip_player_2"
+    },
+    {
+      "kind": "realtime_delay",
+      "duration_ms": 500,
+      "on_out": [
+        {
+          "node": "scene_tier"
+        }
+      ],
+      "key": "realtime_delay"
+    },
+    {
+      "kind": "scene_tier",
+      "tier": "Tier4_FPPCinematic",
+      "force_empty_hands": true,
+      "on_out": [
+        {
+          "node": "character_gender"
+        }
+      ],
+      "key": "scene_tier"
+    },
+    {
+      "kind": "character_gender",
+      "gender": "Male",
+      "on_true": [
+        {
+          "node": "male_sex_14"
+        }
+      ],
+      "on_false": [
+        {
+          "node": "female_sex_14"
+        }
+      ],
+      "key": "character_gender"
+    },
+    {
+      "kind": "render_fade",
+      "fade_in": false,
+      "duration_seconds": 0.25,
+      "on_out": [
+        {
+          "node": "exit_done"
+        }
+      ],
+      "key": "render_fade"
+    }
+  ],
+  "xor_nodes": [],
+  "end_nodes": [
+    {
+      "key": "exit_done"
+    }
+  ],
+  "rid_resources": [
+    {
+      "path": "base\\animations\\quest\\lore\\generic_sex\\intercourse\\sex_14_2s_f.scenerid",
+      "key": "sex_14_2s_f"
+    },
+    {
+      "path": "base\\animations\\quest\\lore\\generic_sex\\intercourse\\sex_05_5s_f.scenerid",
+      "key": "sex_05_5s_f"
+    },
+    {
+      "path": "base\\animations\\quest\\lore\\generic_sex\\intercourse\\sex_11_2s_f.scenerid",
+      "key": "sex_11_2s_f"
+    },
+    {
+      "path": "base\\animations\\quest\\lore\\generic_sex\\intercourse\\sex_13_2s_f.scenerid",
+      "key": "sex_13_2s_f"
+    }
+  ],
+  "rid_animations": [
+    {
+      "serial_number": 1,
+      "key": "animation_1",
+      "resource": "sex_14_2s_f"
+    },
+    {
+      "serial_number": 8,
+      "key": "animation_2",
+      "resource": "sex_14_2s_f"
+    },
+    {
+      "serial_number": 5,
+      "key": "animation_3",
+      "resource": "sex_14_2s_f"
+    },
+    {
+      "serial_number": 5,
+      "key": "animation_4",
+      "resource": "sex_05_5s_f"
+    },
+    {
+      "serial_number": 9,
+      "key": "animation_5",
+      "resource": "sex_05_5s_f"
+    },
+    {
+      "serial_number": 11,
+      "key": "animation_6",
+      "resource": "sex_05_5s_f"
+    },
+    {
+      "serial_number": 1,
+      "key": "animation_7",
+      "resource": "sex_11_2s_f"
+    },
+    {
+      "serial_number": 8,
+      "key": "animation_8",
+      "resource": "sex_11_2s_f"
+    },
+    {
+      "serial_number": 11,
+      "key": "animation_9",
+      "resource": "sex_11_2s_f"
+    },
+    {
+      "serial_number": 5,
+      "key": "animation_10",
+      "resource": "sex_11_2s_f"
+    },
+    {
+      "serial_number": 1,
+      "key": "animation_11",
+      "resource": "sex_13_2s_f"
+    },
+    {
+      "serial_number": 8,
+      "key": "animation_12",
+      "resource": "sex_13_2s_f"
+    },
+    {
+      "serial_number": 11,
+      "key": "animation_13",
+      "resource": "sex_13_2s_f"
+    },
+    {
+      "serial_number": 5,
+      "key": "animation_14",
+      "resource": "sex_13_2s_f"
+    }
+  ],
+  "rid_anim_sets": [
+    {
+      "animations": [
+        "animation_1",
+        "animation_2",
+        "animation_5",
+        "animation_6",
+        "animation_7",
+        "animation_8",
+        "animation_11",
+        "animation_12"
+      ],
+      "key": "body_set_1"
+    },
+    {
+      "animations": [
+        "animation_3",
+        "animation_4",
+        "animation_9",
+        "animation_10",
+        "animation_13",
+        "animation_14"
+      ],
+      "key": "body_set_2"
+    }
+  ],
+  "rid_facial_anim_sets": [],
+  "rid_camera_animations": [
+    {
+      "serial_number": 7,
+      "key": "camera_1",
+      "resource": "sex_14_2s_f"
+    },
+    {
+      "serial_number": 7,
+      "key": "camera_2",
+      "resource": "sex_05_5s_f"
+    },
+    {
+      "serial_number": 7,
+      "key": "camera_3",
+      "resource": "sex_11_2s_f"
+    },
+    {
+      "serial_number": 7,
+      "key": "camera_4",
+      "resource": "sex_13_2s_f"
+    }
+  ]
+}
