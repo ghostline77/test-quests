@@ -17,11 +17,11 @@ fit are generated from the authored character project; clothing refitting stays
 disabled. Commands below use the normal executable locations and publish into
 `work/`. Export/build output destinations must be absent before a fresh build.
 
-Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation. Set `GHOSTLINE_ITEMS_CATALOGUE` to the unpacked item catalogue.
 
 ```powershell
-ghostline-character-builder build quests/gqt009/characters/heavy_metal.character.json --catalogue ../items/dist/catalogue --game $env:GAME_ROOT --export --out work/characters/heavy_metal
-ghostline-character-builder review-cyberware --project quests/gqt009/characters/heavy_metal.character.json --catalogue ../items/dist/catalogue --game $env:GAME_ROOT --template male_big --entity 'base\characters\cyberware\npc\psycho_mantisblade.ent' --fit --depot 'mod\gqt009\cyberware' --out work/cyberware/heavy_metal
+ghostline-character-builder build quests/gqt009/characters/heavy_metal.character.json --catalogue $env:GHOSTLINE_ITEMS_CATALOGUE --game $env:GAME_ROOT --export --out work/characters/heavy_metal
+ghostline-character-builder review-cyberware --project quests/gqt009/characters/heavy_metal.character.json --catalogue $env:GHOSTLINE_ITEMS_CATALOGUE --game $env:GAME_ROOT --template male_big --entity 'base\characters\cyberware\npc\psycho_mantisblade.ent' --fit --depot 'mod\gqt009\cyberware' --out work/cyberware/heavy_metal
 ghostline-red cr2w-deserialize quests/gqt009/weapons/factory.csv.json work/cyberware/heavy_metal/factory.csv
 ghostline-quest-builder compile quests/gqt009/quest.json --out work/builds/gqt009_heavy_metal --game $env:GAME_ROOT
 ghostline-quest-builder scenarios quests/gqt009/quest.json quests/gqt009/scenarios.json --out work/gqt009-scenarios.json
