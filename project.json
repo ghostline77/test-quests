@@ -12,7 +12,5 @@
     "mod/ghostline/characters/goth_baddie/",
     "mod/gqt007/"
   ],
-  "dependencies": [
-    "../ghostline"
-  ]
+  "dependencies": []
 }

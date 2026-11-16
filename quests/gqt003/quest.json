@@ -215,7 +215,7 @@
     }
   },
   "resources": {
-    "archives": ["../../../ghostline/work/characters/patch/patch.archive"],
+    "archives": ["../../assets/characters/patch/patch.archive"],
     "root_resource": "mod\\gqt003\\phases\\gqt003.questphase",
     "scenes": [],
     "worlds": [
@@ -225,6 +225,6 @@
     "media": [
       "../../assets/media"
     ],
-    "tweaks": {"r6/tweaks/ghostline/character_patch.yaml":"../../../ghostline/work/characters/patch/patch.yaml"}
+    "tweaks": {"r6/tweaks/ghostline/character_patch.yaml":"../../assets/characters/patch/patch.yaml"}
   }
 }
