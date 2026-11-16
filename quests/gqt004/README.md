@@ -6,9 +6,11 @@ Exercise entering, riding with a contact, driving, stealing and delivering vehic
 
 Build from the test-quests repository root:
 
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+
 ```powershell
-../quest-builder/target/debug/ghostline-quest-builder.exe series . --quest gqt004_vehicle_lab --out work/builds --game 'K:/Cyberpunk 2077'
-../quest-builder/target/debug/ghostline-quest-builder.exe package packaging/gqt004.json --out work/packages/gqt004 --plan
+ghostline-quest-builder series . --quest gqt004_vehicle_lab --out work/builds --game $env:GAME_ROOT
+ghostline-quest-builder package packaging/gqt004.json --out work/packages/gqt004 --plan
 ```
 
 Commands refuse an existing output destination. Refer to the [repository guide](../../README.md) for shared inputs and export ownership. Offline serialization/package verification does not replace in-game checks.

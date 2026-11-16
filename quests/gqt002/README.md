@@ -6,9 +6,11 @@ Activate the guarded site, acquire and plant the item while monitoring the optio
 
 Build from the test-quests repository root:
 
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+
 ```powershell
-../quest-builder/target/debug/ghostline-quest-builder.exe series . --quest gqt002_quiet_install --out work/builds --game 'K:/Cyberpunk 2077'
-../quest-builder/target/debug/ghostline-quest-builder.exe package packaging/gqt002.json --out work/packages/gqt002 --plan
+ghostline-quest-builder series . --quest gqt002_quiet_install --out work/builds --game $env:GAME_ROOT
+ghostline-quest-builder package packaging/gqt002.json --out work/packages/gqt002 --plan
 ```
 
 Commands refuse an existing output destination. Refer to the [repository guide](../../README.md) for shared inputs and export ownership. Offline serialization/package verification does not replace in-game checks.

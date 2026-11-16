@@ -6,9 +6,11 @@ Regina's authored messages, Goth Baddie's challenge and combat outcomes share th
 
 Build from the test-quests repository root:
 
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+
 ```powershell
-../quest-builder/target/debug/ghostline-quest-builder.exe series . --quest gqt006_goth_baddie_cyberpsycho --out work/builds --game 'K:/Cyberpunk 2077'
-../quest-builder/target/debug/ghostline-quest-builder.exe package packaging/gqt006.json --out work/packages/gqt006 --plan
+ghostline-quest-builder series . --quest gqt006_goth_baddie_cyberpsycho --out work/builds --game $env:GAME_ROOT
+ghostline-quest-builder package packaging/gqt006.json --out work/packages/gqt006 --plan
 ```
 
 Commands refuse an existing output destination. Refer to the [repository guide](../../README.md) for shared inputs and export ownership. Offline serialization/package verification does not replace in-game checks.

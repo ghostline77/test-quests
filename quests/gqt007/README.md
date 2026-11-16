@@ -30,9 +30,11 @@ This does not replace the vanilla Happy Together animset.
 
 Run from the repository root:
 
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+
 ```powershell
-../quest-builder/target/debug/ghostline-quest-builder.exe series . --quest gqt007_barry_lipsync --out work/builds --game 'K:/Cyberpunk 2077'
-../quest-builder/target/debug/ghostline-quest-builder.exe package packaging/gqt007.json --out work/packages/gqt007 --plan
+ghostline-quest-builder series . --quest gqt007_barry_lipsync --out work/builds --game $env:GAME_ROOT
+ghostline-quest-builder package packaging/gqt007.json --out work/packages/gqt007 --plan
 ```
 
 The comparison animation set is a supplied native asset. Its generation belongs to the separate animation/audio tools. This quest does not recreate it or replace Barry's vanilla asset.

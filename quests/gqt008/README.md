@@ -10,10 +10,12 @@ reviewed male_big seated performance presets. The story quests are unaffected.
 
 The [building project](world/interaction-lab.building.json) owns the floor, walls, desk, chairs, paperwork, mug and layer-241 navigation. Export it with the standalone building builder before compiling the quest:
 
+Install the tools listed in [the authoring guide](../../docs/authoring.md) and set `GAME_ROOT` to your game installation.
+
 ```powershell
-../building-builder/target/release/ghostline-building-builder.exe export quests/gqt008/world/interaction-lab.building.json --game 'K:/Cyberpunk 2077' --out work/buildings/interaction-lab
-../quest-builder/target/debug/ghostline-quest-builder.exe series . --quest gqt008_interaction --out work/builds --game 'K:/Cyberpunk 2077'
-../quest-builder/target/debug/ghostline-quest-builder.exe package packaging/gqt008.json --out work/packages/gqt008 --plan
+ghostline-building-builder export quests/gqt008/world/interaction-lab.building.json --game $env:GAME_ROOT --out work/buildings/interaction-lab
+ghostline-quest-builder series . --quest gqt008_interaction --out work/builds --game $env:GAME_ROOT
+ghostline-quest-builder package packaging/gqt008.json --out work/packages/gqt008 --plan
 ```
 
 Run from the test-quests repository root. Commands refuse existing destinations. The quest pins its generated building inputs by hash and supplies its own reviewed greeting media. No copied phase, scene or journal template is a build input.
