@@ -11,6 +11,8 @@ cargo install --locked --git https://github.com/ghostline77/quest-builder
 cargo install --locked --git https://github.com/ghostline77/building-builder
 ```
 
+GQT009 also uses Character Builder and the native CR2W CLI. Install them with `cargo install --locked --git https://github.com/ghostline77/character-builder` and `cargo install --locked --git https://github.com/ghostline77/ghostline-red --bin ghostline-red`.
+
 Use an installed game for native resource resolution. Reflection metadata loads
 automatically. Keep generated outputs outside the game installation.
 
